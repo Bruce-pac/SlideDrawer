@@ -39,14 +39,14 @@
 		607FACE51AFB9204008FA782 /* SlideDrawer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideDrawer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6FB960B6F1BD0CFF74BE96DD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		6FB960B6F1BD0CFF74BE96DD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		7EFD6BB867DF150544F8CF63 /* Pods-SlideDrawer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24986C9F391D4209B2C1FF /* Pods-SlideDrawer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Tests/Pods-SlideDrawer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		BCB80D5A2C4C0E83C0B25E40 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		BCB80D5A2C4C0E83C0B25E40 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C07D8860A4A21554ED93EF37 /* Pods-SlideDrawer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C744A74EFFB07146413321C4 /* Pods_SlideDrawer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideDrawer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABA01B1797F6991309AA150 /* Pods_SlideDrawer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideDrawer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEA4E2CA6AD159F476DE73D1 /* SlideDrawer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SlideDrawer.podspec; path = ../SlideDrawer.podspec; sourceTree = "<group>"; };
+		EEA4E2CA6AD159F476DE73D1 /* SlideDrawer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SlideDrawer.podspec; path = ../SlideDrawer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,10 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = NS27ZB8WPD;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = NS27ZB8WPD;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -481,6 +483,7 @@
 			baseConfigurationReference = 7EFD6BB867DF150544F8CF63 /* Pods-SlideDrawer_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NS27ZB8WPD;
 				INFOPLIST_FILE = SlideDrawer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -496,6 +499,7 @@
 			baseConfigurationReference = C07D8860A4A21554ED93EF37 /* Pods-SlideDrawer_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NS27ZB8WPD;
 				INFOPLIST_FILE = SlideDrawer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -510,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AF24986C9F391D4209B2C1FF /* Pods-SlideDrawer_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = NS27ZB8WPD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -532,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4587170D2D2ADF6AB08DEA48 /* Pods-SlideDrawer_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = NS27ZB8WPD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
