@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SlideDrawer_Example' do
+  pod 'SlideDrawer', :path => '../'
+
+  target 'SlideDrawer_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
