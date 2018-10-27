@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SlideDrawer'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of SlideDrawer.'
+  s.version          = '1.0.0'
+  s.summary          = 'A lightweight, no intrusion，one line code to use, Slide Drawer written Swift4.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A lightweight, no intrusion，one line code to use, Slide Drawer in Swift4.Do not need to set up leftviewcontroller and rightviewcontroller.
+A lightweight, no intrusion，one line code to use, Slide Drawer written Swift4.Do not need to set up leftviewcontroller and rightviewcontroller.
                        DESC
 
   s.homepage         = 'https://github.com/Bruce-pac/SlideDrawer'
@@ -32,10 +32,5 @@ A lightweight, no intrusion，one line code to use, Slide Drawer in Swift4.Do no
   s.swift_version = '4.2'
 
   s.source_files = 'SlideDrawer/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'SlideDrawer' => ['SlideDrawer/Assets/*.png']
-  # }
-  # s.frameworks = 'UIKit', 'MapKit'
 
 end
