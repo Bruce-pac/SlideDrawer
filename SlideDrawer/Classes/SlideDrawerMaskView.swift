@@ -9,7 +9,6 @@
 import UIKit
 
 final class SlideDrawerMaskView: UIView {
-
     private static var shared: SlideDrawerMaskView?
 
     private override init(frame: CGRect) {
@@ -24,29 +23,29 @@ final class SlideDrawerMaskView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-   static func shared(frame: CGRect) -> SlideDrawerMaskView {
-    if shared != nil {
-        return shared!
-    }
+    static func shared(frame: CGRect) -> SlideDrawerMaskView {
+        if self.shared != nil {
+            return self.shared!
+        }
 
-    let maskView = SlideDrawerMaskView(frame: frame)
-    shared = maskView
-    return maskView
+        let maskView = SlideDrawerMaskView(frame: frame)
+        shared = maskView
+        return maskView
     }
 
     static func releaseShared() {
-        shared?.removeFromSuperview()
-        shared = nil
+        self.shared?.removeFromSuperview()
+        self.shared = nil
     }
 
-   private func setupGestureRecognizer() {
+    private func setupGestureRecognizer() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleGesture(recognizer:)))
         self.addGestureRecognizer(tap)
         let pan = UIPanGestureRecognizer(target: self, action: #selector(self.handleGesture(recognizer:)))
         self.addGestureRecognizer(pan)
     }
 
-//处理遮罩层上的手势，通过发送通知到SlideDrawerInteractiveTransition具体处理
+    // 处理遮罩层上的手势，通过发送通知到SlideDrawerInteractiveTransition具体处理
     @objc func handleGesture(recognizer: UIGestureRecognizer) {
         switch recognizer {
         case is UIPanGestureRecognizer:

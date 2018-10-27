@@ -13,13 +13,13 @@ class SlideDrawerAnimator: NSObject {
 
     internal var disappearInteractiveTransition: SlideDrawerInteractiveTransition? {
         didSet {
-            disappearInteractiveTransition?.configuration = self.configuration
+            self.disappearInteractiveTransition?.configuration = self.configuration
         }
     }
 
     internal var appearInteractiveTransition: SlideDrawerInteractiveTransition? {
         didSet {
-            appearInteractiveTransition?.configuration = self.configuration
+            self.appearInteractiveTransition?.configuration = self.configuration
         }
     }
 
@@ -33,11 +33,11 @@ class SlideDrawerAnimator: NSObject {
 
     func update(configuration: SlideDrawerConfiguration) {
         self.configuration = configuration
-        disappearInteractiveTransition?.configuration = self.configuration
-        appearInteractiveTransition?.configuration = self.configuration
+        self.disappearInteractiveTransition?.configuration = self.configuration
+        self.appearInteractiveTransition?.configuration = self.configuration
     }
 
-    func addPanGesture(on viewController: UIViewController, `for` transition: SlideDrawerInteractiveTransition) {
+    func addPanGesture(on viewController: UIViewController, for transition: SlideDrawerInteractiveTransition) {
         switch transition.drawerAppearGesture {
         case .edge:
             let leftedge = UIScreenEdgePanGestureRecognizer(target: transition, action: #selector(transition.handle(gesture:)))

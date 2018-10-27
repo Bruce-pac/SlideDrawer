@@ -29,38 +29,32 @@ public protocol SlideDrawerCompatible {
 
 public extension SlideDrawerCompatible {
     public var sd: SlideDrawer<Self> {
-        get {
-            return SlideDrawer(self)
-        }
+        return SlideDrawer(self)
     }
 }
 
 import UIKit
 
-extension UIViewController: SlideDrawerCompatible {
-
-}
+extension UIViewController: SlideDrawerCompatible {}
 
 extension NSNotification.Name {
-   public struct SlideDrawer {
+    public struct SlideDrawer {
         internal static let tap = Notification.Name("tap")
         internal static let pan = Notification.Name("pan")
-        //see demo
+        // see demo
         public static let insideDismissCompleted = Notification.Name("insideDismissCompleted")
     }
 }
 
-extension UIView: SlideDrawerCompatible {
-
-}
+extension UIView: SlideDrawerCompatible {}
 
 extension SlideDrawer where Base: UIView {
     var viewController: UIViewController {
-            var responder = self.base.next
+        var responder = self.base.next
 
-            while !(responder?.isKind(of: UIViewController.self))! {
-               responder = responder?.next
-            }
-            return responder as! UIViewController
+        while !(responder?.isKind(of: UIViewController.self))! {
+            responder = responder?.next
+        }
+        return responder as! UIViewController
     }
 }

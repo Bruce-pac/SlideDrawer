@@ -9,8 +9,8 @@
 import UIKit
 
 public protocol SlideDrawerPresentKeepable: NSObjectProtocol {
-    ///Whether the drawer stays in the drawer when the drawer is presenting other viewcontroller. 抽屉内进行present的时候是否保持抽屉状态
-    var keepWhenPresenting: Bool { get set}
+    /// Whether the drawer stays in the drawer when the drawer is presenting other viewcontroller. 抽屉内进行present的时候是否保持抽屉状态
+    var keepWhenPresenting: Bool { get set }
     func observeDismiss()
 
     //this function have been implemented,it usually doesn't have to be implemented anymore unless it's necessary.
@@ -36,7 +36,5 @@ public extension SlideDrawerPresentKeepable where Self: UIViewController {
                 self.view.frame = CGRect(x: maxX!, y: (frame.minY), width: (frame.width), height: (frame.height))
             }
         }
-
     }
-
 }

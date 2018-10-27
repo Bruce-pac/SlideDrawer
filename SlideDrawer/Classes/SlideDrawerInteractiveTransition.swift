@@ -14,8 +14,7 @@ public enum IntractiveGestureType {
 }
 
 class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
-                                        SlideDrawerTransitionable {
-
+    SlideDrawerTransitionable {
     var transitionType: SlideDrawerTransitionType
     var configuration: SlideDrawerConfiguration
 
@@ -31,12 +30,12 @@ class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
 
     private var percent: CGFloat = 0
 
-    ///displayLink完成剩余手势的每帧的百分比
-   private var framePercent: CGFloat = 0
+    /// displayLink完成剩余手势的每帧的百分比
+    private var framePercent: CGFloat = 0
 
-   private var cancelOrFinish: Bool = false
+    private var cancelOrFinish: Bool = false
 
-   private var displayLink: CADisplayLink?
+    private var displayLink: CADisplayLink?
 
     // MARK: life cycle
 
@@ -54,13 +53,14 @@ class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
     }
 
     // MARK: private
-   private func addNotificationCenterObserver() {
-    //观察SlideDrawerMaskView发出的通知
+
+    private func addNotificationCenterObserver() {
+        // 观察SlideDrawerMaskView发出的通知
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleGesture(by:)), name: NSNotification.Name.SlideDrawer.tap, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleGesture(by:)), name: NSNotification.Name.SlideDrawer.pan, object: nil)
     }
 
-//处理SlideDrawerMaskView发出的通知
+    // 处理SlideDrawerMaskView发出的通知
     @objc private func handleGesture(by noti: NSNotification) {
         let object = noti.object
 
@@ -69,7 +69,7 @@ class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
             gesture.view?.sd.viewController.presentedViewController?.dismiss(animated: true, completion: nil)
         }
         if object is UIPanGestureRecognizer {
-            guard transitionType == .disappear else {
+            guard self.transitionType == .disappear else {
                 return
             }
             let gesture = object as! UIPanGestureRecognizer
@@ -77,31 +77,29 @@ class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
         }
     }
 
-  @objc internal func handle(gesture: UIPanGestureRecognizer) {
+    @objc internal func handle(gesture: UIPanGestureRecognizer) {
+        // 拿到手势移动的距离，计算百分比
+        let x = gesture.translation(in: gesture.view).x
+        self.percent = abs(x / SlideDrawerConst.screenwidth)
 
-    //拿到手势移动的距离，计算百分比
-    let x = gesture.translation(in: gesture.view).x
-    self.percent = abs(x / SlideDrawerConst.screenwidth)
-
-    switch gesture.state {
-    case .changed:
-        if self.interacting {
-            self.percent = min(max(self.percent, 0.001), 1.0)
-            self.update(percent)
-        } else {
-            self.willInteracting(beginTranslationX: x, by: gesture)
-        }
-    case .cancelled, .ended:
-        self.interacting = false
-        self.startDisplayLink(from: self.percent)
-    default:
-        break
+        switch gesture.state {
+        case .changed:
+            if self.interacting {
+                self.percent = min(max(self.percent, 0.001), 1.0)
+                self.update(self.percent)
+            } else {
+                self.willInteracting(beginTranslationX: x, by: gesture)
+            }
+        case .cancelled, .ended:
+            self.interacting = false
+            self.startDisplayLink(from: self.percent)
+        default:
+            break
         }
     }
 
-   private func willInteracting(beginTranslationX x: CGFloat, by gesture: UIPanGestureRecognizer) {
-
-        switch transitionType {
+    private func willInteracting(beginTranslationX x: CGFloat, by gesture: UIPanGestureRecognizer) {
+        switch self.transitionType {
         case .appear:
             if x == 0 {
                 return
@@ -112,7 +110,7 @@ class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
         }
     }
 
-   private func appear(beginTranslationX x: CGFloat, by gesture: UIPanGestureRecognizer) {
+    private func appear(beginTranslationX x: CGFloat, by gesture: UIPanGestureRecognizer) {
         self.configuration.direction = x > 0 ? .left : .right
 //        let locationX = gesture.location(in: self.drawerVC?.view).x
 //    if gesture is UIScreenEdgePanGestureRecognizer {
@@ -142,22 +140,22 @@ class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
         self.drawerVC?.dismiss(animated: true, completion: nil)
     }
 
-    //手势结束后接下来的事情
-   private func startDisplayLink(from percent: CGFloat) {
+    // 手势结束后接下来的事情
+    private func startDisplayLink(from percent: CGFloat) {
         self.cancelOrFinish = percent >= self.configuration.finishPercent
         self.framePercent = 1 / (self.duration * 60)
         if self.displayLink == nil {
-        self.displayLink = CADisplayLink(target: self, selector: #selector(self.displayLinkUpdate))
+            self.displayLink = CADisplayLink(target: self, selector: #selector(self.displayLinkUpdate))
         }
         self.displayLink?.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
     }
 
-   private func stopDisplayLink() {
+    private func stopDisplayLink() {
         self.displayLink?.invalidate()
         self.displayLink = nil
     }
 
-    ///自动完成手势
+    /// 自动完成手势
     @objc private func displayLinkUpdate() {
         switch self.cancelOrFinish {
         case true:
@@ -180,6 +178,5 @@ class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
 
         self.percent = min(max(self.percent, 0.0), 1.0)
         self.update(self.percent)
-
     }
 }
