@@ -22,7 +22,7 @@ pod 'SlideDrawer'
 
 ## Author
 
-Bruce-pac, guxinye@dinghaotech.com
+Bruce-pac, Bruce_pac312@foxmail.com
 
 ## License
 
