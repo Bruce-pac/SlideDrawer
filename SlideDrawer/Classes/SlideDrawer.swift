@@ -42,7 +42,7 @@ extension UIViewController: SlideDrawerCompatible {
 }
 
 extension NSNotification.Name {
-    struct SlideDrawer {
+   public struct SlideDrawer {
         internal static let tap = Notification.Name("tap")
         internal static let pan = Notification.Name("pan")
         //see demo

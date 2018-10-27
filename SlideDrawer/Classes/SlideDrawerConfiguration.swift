@@ -21,13 +21,13 @@ public enum SlideDrawerTransitionDirection {
 }
 
 public struct SlideDrawerConfiguration {
-    var animationType: SlideDrawerAnimationType = .push
+   public var animationType: SlideDrawerAnimationType = .push
 
-    var direction: SlideDrawerTransitionDirection = .left
+   public var direction: SlideDrawerTransitionDirection = .left
 
-    var backgroundImage: UIImage?
+   public var backgroundImage: UIImage?
 
-    var distance: CGFloat = SlideDrawerConst.screenwidth * 0.75 {
+   public var distance: CGFloat = SlideDrawerConst.screenwidth * 0.75 {
         didSet {
             if oldValue < 0 {
                 distance = SlideDrawerConst.screenwidth * 0.75
@@ -35,7 +35,7 @@ public struct SlideDrawerConfiguration {
         }
     }
 
-    var finishPercent: CGFloat = 0.5 {
+   public var finishPercent: CGFloat = 0.5 {
         didSet {
             if oldValue <= 0 || oldValue > 1 {
                 finishPercent = 0.5
@@ -43,7 +43,7 @@ public struct SlideDrawerConfiguration {
         }
     }
 
-    var apperarDuration: TimeInterval = 0.25 {
+   public var apperarDuration: TimeInterval = 0.25 {
         didSet {
             if oldValue <= 0 {
                 apperarDuration = 0.25
@@ -51,7 +51,7 @@ public struct SlideDrawerConfiguration {
         }
     }
 
-    var disappearDuration: TimeInterval = 0.25 {
+   public var disappearDuration: TimeInterval = 0.25 {
         didSet {
             if oldValue <= 0 {
                 disappearDuration = 0.25
@@ -59,7 +59,7 @@ public struct SlideDrawerConfiguration {
         }
     }
 
-    var scaleY: CGFloat = 1 {
+   public var scaleY: CGFloat = 1 {
         willSet {
             if newValue <= 0 {
                 fatalError("scaleY can't be less than 0")
@@ -67,7 +67,7 @@ public struct SlideDrawerConfiguration {
         }
     }
 
-    var maskAlpha: CGFloat = 0.4 {
+   public var maskAlpha: CGFloat = 0.4 {
         didSet {
             if oldValue <= 0 || oldValue > 1 {
                 maskAlpha = 0.4

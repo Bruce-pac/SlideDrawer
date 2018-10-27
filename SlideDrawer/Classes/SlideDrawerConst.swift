@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-struct SlideDrawerConst {
-    static let screenwidth = UIScreen.main.bounds.width
+public struct SlideDrawerConst {
+    public static let screenwidth = UIScreen.main.bounds.width
     static let backgroundScale: CGFloat = 1.4
     static let edgeGestureLength: CGFloat = 50
     internal struct AssociatedKeys {

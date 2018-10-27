@@ -91,7 +91,7 @@ public extension SlideDrawer where Base: UIViewController {
     }
 }
 
-extension SlideDrawer where Base: UIViewController, Base: SlideDrawerPresentKeepable {
+public extension SlideDrawer where Base: UIViewController, Base: SlideDrawerPresentKeepable {
     func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
         guard self.base.keepWhenPresenting else {
             let presentingVC = self.base.presentingViewController

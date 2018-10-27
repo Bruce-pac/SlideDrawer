@@ -17,7 +17,7 @@ public protocol SlideDrawerPresentKeepable: NSObjectProtocol {
     func keepPresentedWhenPresenting(from direction: SlideDrawerTransitionDirection)
 }
 
-extension SlideDrawerPresentKeepable where Self: UIViewController {
+public extension SlideDrawerPresentKeepable where Self: UIViewController {
     func keepPresentedWhenPresenting(from direction: SlideDrawerTransitionDirection) {
         switch direction {
         case .left:

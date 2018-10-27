@@ -11,10 +11,15 @@
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		813CA6E8537317919E02670D /* Pods_SlideDrawer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C744A74EFFB07146413321C4 /* Pods_SlideDrawer_Tests.framework */; };
 		81BFAE34D2F9FE736EE1E73B /* Pods_SlideDrawer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABA01B1797F6991309AA150 /* Pods_SlideDrawer_Example.framework */; };
+		84028A7B2182E494003A6D85 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84028A762182E493003A6D85 /* NextViewController.swift */; };
+		84028A7C2182E494003A6D85 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84028A772182E494003A6D85 /* LeftViewController.swift */; };
+		84028A7D2182E494003A6D85 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84028A782182E494003A6D85 /* UIImageExtension.swift */; };
+		84028A7E2182E494003A6D85 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84028A792182E494003A6D85 /* RightViewController.swift */; };
+		84028A7F2182E494003A6D85 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84028A7A2182E494003A6D85 /* ScrollViewController.swift */; };
+		843F713B2182EC6E00A3E221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843F71392182EC6E00A3E221 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +40,17 @@
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* SlideDrawer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideDrawer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6FB960B6F1BD0CFF74BE96DD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		7EFD6BB867DF150544F8CF63 /* Pods-SlideDrawer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		84028A762182E493003A6D85 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		84028A772182E494003A6D85 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		84028A782182E494003A6D85 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		84028A792182E494003A6D85 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
+		84028A7A2182E494003A6D85 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		843F713A2182EC6E00A3E221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF24986C9F391D4209B2C1FF /* Pods-SlideDrawer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Tests/Pods-SlideDrawer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BCB80D5A2C4C0E83C0B25E40 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C07D8860A4A21554ED93EF37 /* Pods-SlideDrawer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,11 +112,16 @@
 		607FACD21AFB9204008FA782 /* Example for SlideDrawer */ = {
 			isa = PBXGroup;
 			children = (
+				84028A772182E494003A6D85 /* LeftViewController.swift */,
+				84028A762182E493003A6D85 /* NextViewController.swift */,
+				84028A792182E494003A6D85 /* RightViewController.swift */,
+				84028A7A2182E494003A6D85 /* ScrollViewController.swift */,
+				84028A782182E494003A6D85 /* UIImageExtension.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				843F71392182EC6E00A3E221 /* LaunchScreen.storyboard */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for SlideDrawer";
@@ -248,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				843F713B2182EC6E00A3E221 /* LaunchScreen.storyboard in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +352,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				84028A7C2182E494003A6D85 /* LeftViewController.swift in Sources */,
+				84028A7B2182E494003A6D85 /* NextViewController.swift in Sources */,
+				84028A7F2182E494003A6D85 /* ScrollViewController.swift in Sources */,
+				84028A7D2182E494003A6D85 /* UIImageExtension.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				84028A7E2182E494003A6D85 /* RightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,12 +388,12 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
+		843F71392182EC6E00A3E221 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
+				843F713A2182EC6E00A3E221 /* Base */,
 			);
-			name = LaunchScreen.xib;
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
