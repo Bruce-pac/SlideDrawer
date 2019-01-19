@@ -20,6 +20,22 @@ it, simply add the following line to your Podfile:
 pod 'SlideDrawer'
 ```
 
+## Usage
+
+```swift
+let vc = LeftViewController()
+//self is the main/center ViewController
+self.sd.show(drawer: vc) //default left
+// you can set direction right by this
+self.sd.show(drawer: vc) { (letConfig) -> SlideDrawerConfiguration in
+                var config = letConfig
+                config.direction = .right
+                return config
+            }
+```
+
+See Examples for more usage
+
 ## Author
 
 Bruce-pac, Bruce_pac312@foxmail.com
