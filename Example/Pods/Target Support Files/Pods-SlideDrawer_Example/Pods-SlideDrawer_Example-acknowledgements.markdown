@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## SlideDrawer
 
-Copyright (c) 2018 Bruce-pac <guxinye@dinghaotech.com>
+Copyright (c) 2018 Bruce-pac <Bruce_pac312@foxmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

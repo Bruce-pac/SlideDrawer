@@ -1,5 +1,5 @@
 PODS:
-  - SlideDrawer (0.1.0)
+  - SlideDrawer (1.0.2)
 
 DEPENDENCIES:
   - SlideDrawer (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SlideDrawer: 3f448902eef442bae0c442b073bf75be43cab002
+  SlideDrawer: a016dfc8064ce28fce91efaf573404aa8eaa00b1
 
 PODFILE CHECKSUM: 777a0667962166e8cd8e53c98838002c7dc4c5db
 
