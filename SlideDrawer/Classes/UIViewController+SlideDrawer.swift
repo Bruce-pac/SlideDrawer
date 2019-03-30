@@ -25,7 +25,7 @@ public extension SlideDrawer where Base: UIViewController {
     /// - Parameters:
     ///   - viewController: 抽屉控制器
     ///   - configuration: 展示抽屉需要的一些效果的配置
-    public func show(drawer viewController: UIViewController, configuration: SlideDrawerConfiguration = SlideDrawerConfiguration.default) {
+    func show(drawer viewController: UIViewController, configuration: SlideDrawerConfiguration = SlideDrawerConfiguration.default) {
         /// 获取animator，没有则创建，然后更新配置
         var animator = self.base.animator
         if animator == nil {
@@ -42,7 +42,7 @@ public extension SlideDrawer where Base: UIViewController {
     }
 
     // 使用建造者模式快速配置并显示抽屉
-    public func show(drawer viewController: UIViewController, configurationBuilder: (SlideDrawerConfiguration) -> SlideDrawerConfiguration) {
+    func show(drawer viewController: UIViewController, configurationBuilder: (SlideDrawerConfiguration) -> SlideDrawerConfiguration) {
         let defaultConfiguration = SlideDrawerConfiguration.default
         let configuration = configurationBuilder(defaultConfiguration)
         show(drawer: viewController, configuration: configuration)

@@ -28,7 +28,7 @@ public protocol SlideDrawerCompatible {
 }
 
 public extension SlideDrawerCompatible {
-    public var sd: SlideDrawer<Self> {
+    var sd: SlideDrawer<Self> {
         return SlideDrawer(self)
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F20632DB0F8E01510E66244D632FBFC3"
+               BlueprintIdentifier = "3A63959449060EF0EAE0B672E6C0514F"
                BuildableName = "SlideDrawer.framework"
                BlueprintName = "SlideDrawer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F20632DB0F8E01510E66244D632FBFC3"
+            BlueprintIdentifier = "3A63959449060EF0EAE0B672E6C0514F"
             BuildableName = "SlideDrawer.framework"
             BlueprintName = "SlideDrawer"
             ReferencedContainer = "container:Pods.xcodeproj">

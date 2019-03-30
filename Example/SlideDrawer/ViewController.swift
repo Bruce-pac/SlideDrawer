@@ -54,7 +54,7 @@ class ViewController: UITableViewController {
                 var config = letConfig
                 config.animationType = .zoom
                 config.scaleY = 0.8
-                config.backgroundImage = UIImage.init(color: UIColor.red)
+                config.backgroundImage = UIImage(color: UIColor.green)
                 config.apperarDuration = appearDuration
                 config.disappearDuration = disappearDuration
                 return config
@@ -66,7 +66,7 @@ class ViewController: UITableViewController {
                 config.direction = .right
                 config.animationType = .zoom
                 config.scaleY = 0.8
-                config.backgroundImage = UIImage.init(color: UIColor.red)
+                config.backgroundImage = UIImage(color: UIColor.green)
                 return config
             }
         }
