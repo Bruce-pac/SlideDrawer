@@ -38,6 +38,9 @@ public extension SlideDrawer where Base: UIViewController {
         disappearIntractiveTransion.drawerVC = viewController
         animator?.disappearInteractiveTransition = disappearIntractiveTransion
         viewController.transitioningDelegate = animator
+        if #available(iOS 13, *) {
+            viewController.modalPresentationStyle = .fullScreen
+        }
         self.base.present(viewController, animated: true, completion: nil)
     }
 

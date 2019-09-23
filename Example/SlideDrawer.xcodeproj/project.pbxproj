@@ -283,21 +283,19 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example-frameworks.sh",
+				"${PODS_ROOT}/LookinServer/LookinServer.framework",
 				"${BUILT_PRODUCTS_DIR}/SlideDrawer/SlideDrawer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LookinServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideDrawer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		72C51E40C6E6D5A200370849 /* [CP] Check Pods Manifest.lock */ = {

@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'SlideDrawer_Example' do
   pod 'SlideDrawer', :path => '../'
+  pod 'LookinServer', :configurations => ['Debug']
 
   target 'SlideDrawer_Tests' do
     inherit! :search_paths
