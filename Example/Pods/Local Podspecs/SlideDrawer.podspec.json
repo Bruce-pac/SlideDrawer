@@ -1,8 +1,8 @@
 {
   "name": "SlideDrawer",
-  "version": "1.0.2",
-  "summary": "A lightweight, no intrusion，one line code to use, Slide Drawer written Swift4.",
-  "description": "A lightweight, no intrusion，one line code to use, Slide Drawer written Swift4.Do not need to set up leftviewcontroller and rightviewcontroller.",
+  "version": "1.0.3",
+  "summary": "A lightweight, no intrusion，one line code to use, Slide Drawer written Swift.",
+  "description": "A lightweight, no intrusion，one line code to use, Slide Drawer written Swift. Do not need to set up leftviewcontroller and rightviewcontroller.",
   "homepage": "https://github.com/Bruce-pac/SlideDrawer",
   "license": {
     "type": "MIT",
@@ -13,12 +13,15 @@
   },
   "source": {
     "git": "https://github.com/Bruce-pac/SlideDrawer.git",
-    "tag": "1.0.2"
+    "tag": "1.0.3"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "swift_versions": "4.2",
+  "swift_versions": [
+    "5.0",
+    "4.2"
+  ],
   "source_files": "SlideDrawer/Classes/**/*",
-  "swift_version": "4.2"
+  "swift_version": "5.0"
 }

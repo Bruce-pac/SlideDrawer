@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SlideDrawer'
-  s.version          = '1.0.2'
-  s.summary          = 'A lightweight, no intrusion，one line code to use, Slide Drawer written Swift4.'
+  s.version          = '1.0.3'
+  s.summary          = 'A lightweight, no intrusion，one line code to use, Slide Drawer written Swift.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A lightweight, no intrusion，one line code to use, Slide Drawer written Swift4.Do not need to set up leftviewcontroller and rightviewcontroller.
+A lightweight, no intrusion，one line code to use, Slide Drawer written Swift. Do not need to set up leftviewcontroller and rightviewcontroller.
                        DESC
 
   s.homepage         = 'https://github.com/Bruce-pac/SlideDrawer'
@@ -29,7 +29,7 @@ A lightweight, no intrusion，one line code to use, Slide Drawer written Swift4.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-  s.swift_version = '4.2'
+  s.swift_versions = [ "5.0", "4.2" ]
 
   s.source_files = 'SlideDrawer/Classes/**/*'
 
