@@ -3,6 +3,7 @@
 [![CI Status](https://img.shields.io/travis/Bruce-pac/SlideDrawer.svg?style=flat)](https://travis-ci.org/Bruce-pac/SlideDrawer)
 [![Version](https://img.shields.io/cocoapods/v/SlideDrawer.svg?style=flat)](https://cocoapods.org/pods/SlideDrawer)
 ![Carthage](https://camo.githubusercontent.com/3dc8a44a2c3f7ccd5418008d1295aae48466c141/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f43617274686167652d636f6d70617469626c652d3442433531442e7376673f7374796c653d666c6174)
+[![SPM](https://camo.githubusercontent.com/ad744674ba25cccb6e683eb78b7c485e1b63b2d2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f53776966742532305061636b6167652532304d616e616765722d636f6d70617469626c652d627269676874677265656e2e737667)](https://github.com/apple/swift-package-manager)
 [![License](https://img.shields.io/cocoapods/l/SlideDrawer.svg?style=flat)](https://cocoapods.org/pods/SlideDrawer)
 [![Platform](https://img.shields.io/cocoapods/p/SlideDrawer.svg?style=flat)](https://cocoapods.org/pods/SlideDrawer)
 
