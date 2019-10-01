@@ -1,6 +1,6 @@
 PODS:
   - LookinServer (0.9.4)
-  - SlideDrawer (1.0.3)
+  - SlideDrawer (1.0.4)
 
 DEPENDENCIES:
   - LookinServer
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   LookinServer: 54eb99921647bda4068ff8776d842285e2bf0adb
-  SlideDrawer: c2c6fd04477a84e789a7fff6833fb24be87b4f07
+  SlideDrawer: cc304f676534779cf695da72c6501e4fc202767d
 
 PODFILE CHECKSUM: a6f7a2ae9f138385f14ecc8aa3070d5d6994a95f
 

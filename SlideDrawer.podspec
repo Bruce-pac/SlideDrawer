@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SlideDrawer'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'A lightweight, no intrusion，one line code to use, Slide Drawer written Swift.'
 
 # This description is used to generate tags and improve search results.
