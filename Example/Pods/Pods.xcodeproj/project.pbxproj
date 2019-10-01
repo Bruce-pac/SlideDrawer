@@ -500,7 +500,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		08E50188354266B94ED050A2EBA5E075 /* Debug */ = {
+		1959A3C084392B575246A74964E2BF1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0906C8D2AECDBA1A48B855BD51CFD72 /* LookinServer.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7DB8A3AE84BD4CE5F95A1455D24D106C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4AC40C7788BD5A8A8A1C006A65E4B670 /* Pods-SlideDrawer_Example.debug.xcconfig */;
 			buildSettings = {
@@ -516,7 +530,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example.modulemap";
@@ -533,24 +547,11 @@
 			};
 			name = Debug;
 		};
-		1959A3C084392B575246A74964E2BF1E /* Release */ = {
+		7EE4C66E3527EE231ECD186F22EE750F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0906C8D2AECDBA1A48B855BD51CFD72 /* LookinServer.xcconfig */;
+			baseConfigurationReference = B66E0579DEBAC957014D06B60D53A299 /* Pods-SlideDrawer_Tests.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		5C8945406B32074046777232090D3DCA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8146986E33C383328C51128F4F537B2 /* SlideDrawer.xcconfig */;
-			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -560,18 +561,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SlideDrawer/SlideDrawer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SlideDrawer/SlideDrawer-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SlideDrawer_Tests/Pods-SlideDrawer_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SlideDrawer/SlideDrawer.modulemap";
-				PRODUCT_MODULE_NAME = SlideDrawer;
-				PRODUCT_NAME = SlideDrawer;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SlideDrawer_Tests/Pods-SlideDrawer_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -591,7 +593,7 @@
 			};
 			name = Debug;
 		};
-		B0087CB4594321EF41619F3181FE120E /* Release */ = {
+		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -639,7 +641,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -651,7 +653,7 @@
 			};
 			name = Release;
 		};
-		B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */ = {
+		916E0404255105F480DC4950B7625F7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -702,7 +704,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -715,40 +717,7 @@
 			};
 			name = Debug;
 		};
-		BE8ABA82BE4B5AF3098E4F8AC63F987C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B66E0579DEBAC957014D06B60D53A299 /* Pods-SlideDrawer_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SlideDrawer_Tests/Pods-SlideDrawer_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SlideDrawer_Tests/Pods-SlideDrawer_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C0F9D43E3FE318832FD9C9363B835EE4 /* Release */ = {
+		9926A0256961FB90B3D7409BFA645E30 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDE8097390AEDE13CF790627C128CCCB /* Pods-SlideDrawer_Example.release.xcconfig */;
 			buildSettings = {
@@ -764,7 +733,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example.modulemap";
@@ -782,7 +751,7 @@
 			};
 			name = Release;
 		};
-		DFACB3B910114EF76027DF3309B77609 /* Release */ = {
+		9F5C6CF8427FFBA3BC3F967B7378FC55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A8146986E33C383328C51128F4F537B2 /* SlideDrawer.xcconfig */;
 			buildSettings = {
@@ -798,7 +767,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SlideDrawer/SlideDrawer-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SlideDrawer/SlideDrawer-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SlideDrawer/SlideDrawer.modulemap";
 				PRODUCT_MODULE_NAME = SlideDrawer;
@@ -808,13 +777,12 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		FCB15F2636AB6A8ECA753ECDC6C40B0D /* Release */ = {
+		9F933F2F761B12FC8E7150BD35433BB6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 68257A9DB9F85AD615AE665BF5474D61 /* Pods-SlideDrawer_Tests.release.xcconfig */;
 			buildSettings = {
@@ -830,7 +798,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SlideDrawer_Tests/Pods-SlideDrawer_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SlideDrawer_Tests/Pods-SlideDrawer_Tests.modulemap";
@@ -848,14 +816,46 @@
 			};
 			name = Release;
 		};
+		FF3326E5EBC4BD32CBEB4BA769D7A98A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8146986E33C383328C51128F4F537B2 /* SlideDrawer.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SlideDrawer/SlideDrawer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SlideDrawer/SlideDrawer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SlideDrawer/SlideDrawer.modulemap";
+				PRODUCT_MODULE_NAME = SlideDrawer;
+				PRODUCT_NAME = SlideDrawer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		1BF4561A76B2C6D455FF0828B8B1DD0A /* Build configuration list for PBXNativeTarget "SlideDrawer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5C8945406B32074046777232090D3DCA /* Debug */,
-				DFACB3B910114EF76027DF3309B77609 /* Release */,
+				9F5C6CF8427FFBA3BC3F967B7378FC55 /* Debug */,
+				FF3326E5EBC4BD32CBEB4BA769D7A98A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -863,8 +863,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */,
-				B0087CB4594321EF41619F3181FE120E /* Release */,
+				916E0404255105F480DC4950B7625F7A /* Debug */,
+				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -872,8 +872,8 @@
 		53AED0D2C261E0C43C3B55A7F6A7358C /* Build configuration list for PBXNativeTarget "Pods-SlideDrawer_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BE8ABA82BE4B5AF3098E4F8AC63F987C /* Debug */,
-				FCB15F2636AB6A8ECA753ECDC6C40B0D /* Release */,
+				7EE4C66E3527EE231ECD186F22EE750F /* Debug */,
+				9F933F2F761B12FC8E7150BD35433BB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -890,8 +890,8 @@
 		ECBB998A13865CDF58BCB1BF99FB115D /* Build configuration list for PBXNativeTarget "Pods-SlideDrawer_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				08E50188354266B94ED050A2EBA5E075 /* Debug */,
-				C0F9D43E3FE318832FD9C9363B835EE4 /* Release */,
+				7DB8A3AE84BD4CE5F95A1455D24D106C /* Debug */,
+				9926A0256961FB90B3D7409BFA645E30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
