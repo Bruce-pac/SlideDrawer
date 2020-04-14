@@ -56,7 +56,7 @@
 		C07D8860A4A21554ED93EF37 /* Pods-SlideDrawer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C744A74EFFB07146413321C4 /* Pods_SlideDrawer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideDrawer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABA01B1797F6991309AA150 /* Pods_SlideDrawer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideDrawer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEA4E2CA6AD159F476DE73D1 /* SlideDrawer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SlideDrawer.podspec; path = ../SlideDrawer.podspec; sourceTree = "<group>"; };
+		EEA4E2CA6AD159F476DE73D1 /* SlideDrawer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SlideDrawer.podspec; path = ../SlideDrawer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,8 +232,8 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = NS27ZB8WPD;
 						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -538,7 +538,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AF24986C9F391D4209B2C1FF /* Pods-SlideDrawer_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = NS27ZB8WPD;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -551,6 +554,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlideDrawer_Example.app/SlideDrawer_Example";
 			};
@@ -560,7 +565,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4587170D2D2ADF6AB08DEA48 /* Pods-SlideDrawer_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = NS27ZB8WPD;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -569,6 +577,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlideDrawer_Example.app/SlideDrawer_Example";
 			};

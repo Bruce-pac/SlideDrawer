@@ -41,13 +41,15 @@ class SlideDrawerTransition: NSObject, SlideDrawerTransitionable {
     }
 
     private func disappearTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
-        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+        guard let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
+            let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
+                return
+        }
 
         UIView.animateKeyframes(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIView.KeyframeAnimationOptions(rawValue: 0), animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1, animations: {
-                toVC?.view.transform = CGAffineTransform.identity
-                fromVC?.view.transform = CGAffineTransform.identity
+                toVC.view.transform = CGAffineTransform.identity
+                fromVC.view.transform = CGAffineTransform.identity
                 let maskView = SlideDrawerMaskView.shared(frame: CGRect.zero)
                 maskView.alpha = 0
                 self.backgroundImageView?.transform = CGAffineTransform(scaleX: SlideDrawerConst.backgroundScale, y: SlideDrawerConst.backgroundScale)
@@ -62,12 +64,14 @@ class SlideDrawerTransition: NSObject, SlideDrawerTransitionable {
     }
 
     func pushAnimation(using transitionContext: UIViewControllerContextTransitioning) {
-        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
-        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+        guard let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
+            let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
+                return
+        }
         let containerView = transitionContext.containerView
 
-        let maskView = SlideDrawerMaskView.shared(frame: (fromVC?.view.bounds)!)
-        fromVC?.view.addSubview(maskView)
+        let maskView = SlideDrawerMaskView.shared(frame: (fromVC.view.bounds))
+        fromVC.view.addSubview(maskView)
 
         let distance = configuration.distance
         var axis: CGFloat = 1
@@ -80,16 +84,16 @@ class SlideDrawerTransition: NSObject, SlideDrawerTransitionable {
             x = containerView.frame.width - distance / 2
         }
 
-        toVC?.view.frame = CGRect(x: x, y: 0, width: containerView.frame.width, height: containerView.frame.height)
-        containerView.addSubview((toVC?.view)!)
-        containerView.addSubview((fromVC?.view)!)
+        toVC.view.frame = CGRect(x: x, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+        containerView.addSubview((toVC.view)!)
+        containerView.addSubview((fromVC.view)!)
 
         UIView.animateKeyframes(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIView.KeyframeAnimationOptions(rawValue: 0), animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1, animations: {
                 let fromVCTransform: CGAffineTransform = CGAffineTransform(translationX: axis * distance, y: 0)
                 let toVCTransform: CGAffineTransform = CGAffineTransform(translationX: axis * distance / 2, y: 0)
-                fromVC?.view.transform = fromVCTransform
-                toVC?.view.transform = toVCTransform
+                fromVC.view.transform = fromVCTransform
+                toVC.view.transform = toVCTransform
                 maskView.alpha = self.configuration.maskAlpha
             })
         }, completion: { _ in
@@ -99,18 +103,20 @@ class SlideDrawerTransition: NSObject, SlideDrawerTransitionable {
             } else {
                 maskView.isUserInteractionEnabled = true
                 transitionContext.completeTransition(true)
-                containerView.addSubview((fromVC?.view)!)
+                containerView.addSubview(fromVC.view)
             }
         })
     }
 
     func zoomAnimation(using transitionContext: UIViewControllerContextTransitioning) {
-        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
-        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+        guard let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
+            let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
+                return
+        }
         let containerView = transitionContext.containerView
 
-        let maskView = SlideDrawerMaskView.shared(frame: (fromVC?.view.bounds)!)
-        fromVC?.view.addSubview(maskView)
+        let maskView = SlideDrawerMaskView.shared(frame: (fromVC.view.bounds))
+        fromVC.view.addSubview(maskView)
 
         var backgroundImageView: UIImageView = UIImageView(frame: containerView.bounds)
         if configuration.backgroundImage != nil {
@@ -133,9 +139,9 @@ class SlideDrawerTransition: NSObject, SlideDrawerTransitionable {
             x = containerView.frame.width - distance / 2
         }
 
-        toVC?.view.frame = CGRect(x: x, y: 0, width: containerView.frame.width, height: containerView.frame.height)
-        containerView.addSubview((toVC?.view)!)
-        containerView.addSubview((fromVC?.view)!)
+        toVC.view.frame = CGRect(x: x, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+        containerView.addSubview(toVC.view)
+        containerView.addSubview(fromVC.view)
 
         UIView.animateKeyframes(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIView.KeyframeAnimationOptions(rawValue: 0), animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1, animations: {
@@ -144,8 +150,8 @@ class SlideDrawerTransition: NSObject, SlideDrawerTransitionable {
                 let translationTransform = CGAffineTransform(translationX: axis * translationX, y: 0)
                 let fromVCTransform: CGAffineTransform = scaleTransform.concatenating(translationTransform)
                 let toVCTransform: CGAffineTransform = CGAffineTransform(translationX: axis * distance / 2, y: 0)
-                fromVC?.view.transform = fromVCTransform
-                toVC?.view.transform = toVCTransform
+                fromVC.view.transform = fromVCTransform
+                toVC.view.transform = toVCTransform
                 maskView.alpha = self.configuration.maskAlpha
                 backgroundImageView.transform = CGAffineTransform.identity
             })
@@ -157,18 +163,21 @@ class SlideDrawerTransition: NSObject, SlideDrawerTransitionable {
             } else {
                 maskView.isUserInteractionEnabled = true
                 transitionContext.completeTransition(true)
-                containerView.addSubview((fromVC?.view)!)
+                containerView.addSubview(fromVC.view)
             }
         })
     }
 
     func maskAnimation(using transitionContext: UIViewControllerContextTransitioning) {
-        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
-        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+        guard let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
+            let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
+                return
+        }
+
         let containerView = transitionContext.containerView
 
-        let maskView = SlideDrawerMaskView.shared(frame: (fromVC?.view.bounds)!)
-        fromVC?.view.addSubview(maskView)
+        let maskView = SlideDrawerMaskView.shared(frame: (fromVC.view.bounds))
+        fromVC.view.addSubview(maskView)
 
         let distance = configuration.distance
         var axis: CGFloat = 1
@@ -181,13 +190,13 @@ class SlideDrawerTransition: NSObject, SlideDrawerTransitionable {
             x = SlideDrawerConst.screenwidth
         }
 
-        toVC?.view.frame = CGRect(x: x, y: 0, width: distance, height: containerView.frame.height)
-        containerView.addSubview((fromVC?.view)!)
-        containerView.addSubview((toVC?.view)!)
+        toVC.view.frame = CGRect(x: x, y: 0, width: distance, height: containerView.frame.height)
+        containerView.addSubview(fromVC.view)
+        containerView.addSubview(toVC.view)
 
         UIView.animateKeyframes(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIView.KeyframeAnimationOptions(rawValue: 0), animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1, animations: {
-                toVC?.view.transform = CGAffineTransform(translationX: axis * distance, y: 0)
+                toVC.view.transform = CGAffineTransform(translationX: axis * distance, y: 0)
                 maskView.alpha = self.configuration.maskAlpha
             })
         }, completion: { _ in
@@ -196,8 +205,8 @@ class SlideDrawerTransition: NSObject, SlideDrawerTransitionable {
             if cancelled {
                 SlideDrawerMaskView.releaseShared()
             } else {
-                containerView.addSubview((fromVC?.view)!)
-                containerView.bringSubviewToFront((toVC?.view)!)
+                containerView.addSubview(fromVC.view)
+                containerView.bringSubviewToFront(toVC.view)
             }
         })
     }

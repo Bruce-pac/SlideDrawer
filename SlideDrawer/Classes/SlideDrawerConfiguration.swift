@@ -27,6 +27,7 @@ public struct SlideDrawerConfiguration {
 
     public var backgroundImage: UIImage?
 
+    /// the drawer viewController's width, default value is third forth of screen width
     public var distance: CGFloat = SlideDrawerConst.screenwidth * 0.75 {
         didSet {
             if oldValue < 0 {
