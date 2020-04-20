@@ -22,8 +22,8 @@ class NextViewController: UIViewController {
 
     @objc func dismissTwo() {
         self.dismiss(animated: true) {
-            NotificationCenter.default.post(name: NSNotification.Name.SlideDrawer.insideDismissCompleted, object: nil)
         }
+        NotificationCenter.default.post(name: NSNotification.Name.SlideDrawer.insideDismissCompleted, object: nil)
     }
 
     override func didReceiveMemoryWarning() {

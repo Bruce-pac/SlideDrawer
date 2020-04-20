@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    fileprivate var animator: SlideDrawerAnimator? {
+    internal var animator: SlideDrawerAnimator? {
         get {
             return objc_getAssociatedObject(self, &SlideDrawerConst.AssociatedKeys.animatorKey) as? SlideDrawerAnimator
         }
@@ -32,15 +32,14 @@ public extension SlideDrawer where Base: UIViewController {
             animator = SlideDrawerAnimator(configuration: configuration)
             self.base.animator = animator
         }
+        viewController.animator = animator
         animator?.update(configuration: configuration)
         /// 创建消失的交互性转场，并赋值给animator
         let disappearIntractiveTransion = SlideDrawerInteractiveTransition(transitionType: .disappear)
         disappearIntractiveTransion.drawerVC = viewController
         animator?.disappearInteractiveTransition = disappearIntractiveTransion
         viewController.transitioningDelegate = animator
-        if #available(iOS 13, *) {
-            viewController.modalPresentationStyle = .fullScreen
-        }
+        viewController.modalPresentationStyle = .custom
         self.base.present(viewController, animated: true, completion: nil)
     }
 
@@ -102,6 +101,7 @@ public extension SlideDrawer where Base: UIViewController, Base: SlideDrawerPres
             }
             return
         }
+        viewControllerToPresent.modalPresentationStyle = .overFullScreen
         self.base.present(viewControllerToPresent, animated: flag, completion: completion)
     }
 }

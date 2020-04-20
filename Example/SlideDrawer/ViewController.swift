@@ -17,8 +17,12 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        automaticallyAdjustsScrollViewInsets = false
+        tableView.contentInset = UIEdgeInsets(top: 35, left: 0, bottom: 0, right: 0)
         self.sd.register(gesture: .edge) { (direction) in
             self.push(from: direction)
+//            self.mask(from: direction)
+//            self.zoom(from: direction)
         }
     }
 
@@ -50,11 +54,12 @@ class ViewController: UITableViewController {
         switch direction {
         case .left:
             let vc: LeftViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LeftViewController") as! LeftViewController
+            vc.keepWhenPresenting = true
             self.sd.show(drawer: vc) { (letConfig) -> SlideDrawerConfiguration in
                 var config = letConfig
                 config.animationType = .zoom
                 config.scaleY = 0.8
-                config.backgroundImage = UIImage(color: UIColor.green)
+                config.backgroundImage = UIImage(color: UIColor.red)
                 config.apperarDuration = appearDuration
                 config.disappearDuration = disappearDuration
                 return config
@@ -67,6 +72,8 @@ class ViewController: UITableViewController {
                 config.animationType = .zoom
                 config.scaleY = 0.8
                 config.backgroundImage = UIImage(color: UIColor.green)
+                config.apperarDuration = appearDuration
+                config.disappearDuration = disappearDuration
                 return config
             }
         }
@@ -76,6 +83,7 @@ class ViewController: UITableViewController {
         switch direction {
         case .left:
             let vc: LeftViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LeftViewController") as! LeftViewController
+            vc.keepWhenPresenting = true
             self.sd.show(drawer: vc) { (letConfig) -> SlideDrawerConfiguration in
                 var config = letConfig
                 config.animationType = .mask
@@ -113,5 +121,6 @@ extension ViewController {
         default:
             print("\(index)")
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -48,33 +48,41 @@ class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
     }
 
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.SlideDrawer.tap, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.SlideDrawer.pan, object: nil)
     }
 
     // MARK: private
 
     private func addNotificationCenterObserver() {
-        // 观察SlideDrawerMaskView发出的通知
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleGesture(by:)), name: NSNotification.Name.SlideDrawer.tap, object: nil)
+        // 观察SlideDrawerPresentationController发出的通知
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleGesture(by:)), name: NSNotification.Name.SlideDrawer.pan, object: nil)
     }
 
-    // 处理SlideDrawerMaskView发出的通知
+    // 处理SlideDrawerPresentationController发出的通知
     @objc private func handleGesture(by noti: NSNotification) {
         let object = noti.object
 
-        if object is UITapGestureRecognizer {
-            let gesture = object as! UITapGestureRecognizer
-            gesture.view?.sd.viewController.presentedViewController?.dismiss(animated: true, completion: nil)
-        }
-        if object is UIPanGestureRecognizer {
+        switch object {
+        case is UIPanGestureRecognizer:
             guard self.transitionType == .disappear else {
                 return
             }
             let gesture = object as! UIPanGestureRecognizer
             self.handle(gesture: gesture)
+        default:
+            break
         }
+    }
+
+    var contextData: UIViewControllerContextTransitioning?
+
+    override func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+        super.startInteractiveTransition(transitionContext)
+        contextData = transitionContext
+    }
+
+    override var debugDescription: String{
+        return "percent:\(self.percent)"
     }
 
     @objc internal func handle(gesture: UIPanGestureRecognizer) {
@@ -112,18 +120,6 @@ class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
 
     private func appear(beginTranslationX x: CGFloat, by gesture: UIPanGestureRecognizer) {
         self.configuration.direction = x > 0 ? .left : .right
-//        let locationX = gesture.location(in: self.drawerVC?.view).x
-//    if gesture is UIScreenEdgePanGestureRecognizer {
-//        return
-//    }
-//        let edgeGesture: Bool = self.drawerAppearGesture == .edge
-//        let condition1 = edgeGesture && self.configuration.direction == .left &&
-//                         locationX > SlideDrawerConst.edgeGestureLength
-//        let condition2 = edgeGesture && self.configuration.direction == .right &&
-//                         locationX < SlideDrawerConst.screenwidth - SlideDrawerConst.edgeGestureLength
-//        if condition1 || condition2 {
-//            return
-//        }
         self.interacting = true
         self.transitionHandler?(self.configuration.direction)
     }

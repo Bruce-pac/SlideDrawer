@@ -23,12 +23,14 @@ class SlideDrawerAnimator: NSObject {
         }
     }
 
+    var presentationController: SlideDrawerPresentationController!
+
     init(configuration: SlideDrawerConfiguration) {
         self.configuration = configuration
     }
 
     deinit {
-        print(#function)
+        print(#function, self)
     }
 
     func update(configuration: SlideDrawerConfiguration) {
@@ -68,11 +70,13 @@ extension SlideDrawerAnimator: UIGestureRecognizerDelegate {
 extension SlideDrawerAnimator: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let transition = SlideDrawerTransition(transitionType: .appear, configuration: self.configuration)
+        transition.presentationController = presentationController
         return transition
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let transition = SlideDrawerTransition(transitionType: .disappear, configuration: self.configuration)
+        transition.presentationController = presentationController
         return transition
     }
 
@@ -86,5 +90,13 @@ extension SlideDrawerAnimator: UIViewControllerTransitioningDelegate {
         guard let interacting = self.disappearInteractiveTransition?.interacting else { return nil }
 
         return interacting ? self.disappearInteractiveTransition : nil
+    }
+
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        presentationController = SlideDrawerPresentationController(presentedViewController: presented,
+                                                                   presenting: presenting,
+                                                                   source: source,
+                                                                   configuration: self.configuration)
+        return presentationController
     }
 }

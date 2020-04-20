@@ -40,12 +40,13 @@ class LeftViewController: UITableViewController {
         default:
             fatalError()
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 extension LeftViewController: SlideDrawerPresentKeepable {
 
     @objc func observeDismiss() {
-        keepPresentedWhenPresenting(from: .left)
+//        keepPresentedWhenPresenting(from: .left)
     }
 }

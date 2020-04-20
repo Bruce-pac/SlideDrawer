@@ -49,12 +49,13 @@ extension NSNotification.Name {
 extension UIView: SlideDrawerCompatible {}
 
 extension SlideDrawer where Base: UIView {
-    var viewController: UIViewController {
+    var viewController: UIViewController? {
         var responder = self.base.next
 
-        while !(responder?.isKind(of: UIViewController.self))! {
+        while responder != nil && !(responder?.isKind(of: UIViewController.self))! {
             responder = responder?.next
         }
-        return responder as! UIViewController
+        let result = responder.map { $0 as! UIViewController }
+        return result
     }
 }
