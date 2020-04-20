@@ -16,7 +16,7 @@ class RightViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsets(top: 35, left: 0, bottom: 0, right: 0)
-        NotificationCenter.default.addObserver(self, selector: #selector(observeDismiss), name: NSNotification.Name.SlideDrawer.insideDismissCompleted, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(observeDismiss), name: NSNotification.Name.SlideDrawer.insideDismissCompleted, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +43,7 @@ class RightViewController: UITableViewController {
 
 extension RightViewController: SlideDrawerPresentKeepable {
 
-    @objc func observeDismiss() {
-        keepPresentedWhenPresenting(from: .right)
-    }
+//    @objc func observeDismiss() {
+//        keepPresentedWhenPresenting(from: .right)
+//    }
 }

@@ -16,7 +16,7 @@ class LeftViewController: UITableViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.red
         self.tableView.contentInset = UIEdgeInsets(top: 35, left: 0, bottom: 0, right: 0)
-        NotificationCenter.default.addObserver(self, selector: #selector(observeDismiss), name: NSNotification.Name.SlideDrawer.insideDismissCompleted, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(observeDismiss), name: NSNotification.Name.SlideDrawer.insideDismissCompleted, object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -46,7 +46,7 @@ class LeftViewController: UITableViewController {
 
 extension LeftViewController: SlideDrawerPresentKeepable {
 
-    @objc func observeDismiss() {
+//    @objc func observeDismiss() {
 //        keepPresentedWhenPresenting(from: .left)
-    }
+//    }
 }

@@ -42,6 +42,7 @@ extension NSNotification.Name {
         internal static let tap = Notification.Name("tap")
         internal static let pan = Notification.Name("pan")
         // see demo
+        @available(*, deprecated, message: "No longer need")
         public static let insideDismissCompleted = Notification.Name("insideDismissCompleted")
     }
 }
