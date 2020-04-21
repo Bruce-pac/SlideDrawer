@@ -25,21 +25,11 @@ public struct SlideDrawerConfiguration {
 
     public var direction: SlideDrawerTransitionDirection = .left
 
-    public var backgroundImage: UIImage?
-
     /// the drawer viewController's width, default value is third forth of screen width
     public var distance: CGFloat = SlideDrawerConst.screenwidth * 0.75 {
         didSet {
             if oldValue < 0 {
                 distance = SlideDrawerConst.screenwidth * 0.75
-            }
-        }
-    }
-
-    public var finishPercent: CGFloat = 0.5 {
-        didSet {
-            if oldValue <= 0 || oldValue > 1 {
-                finishPercent = 0.5
             }
         }
     }
@@ -60,6 +50,18 @@ public struct SlideDrawerConfiguration {
         }
     }
 
+    public var finishPercent: CGFloat = 0.5 {
+        didSet {
+            if oldValue <= 0 || oldValue > 1 {
+                finishPercent = 0.5
+            }
+        }
+    }
+
+    /// only use when animationType is zoom
+    public var backgroundImage: UIImage?
+
+    /// only use when animationType is zoom
     public var scaleY: CGFloat = 1 {
         willSet {
             if newValue <= 0 {
@@ -74,6 +76,26 @@ public struct SlideDrawerConfiguration {
                 maskAlpha = 0.4
             }
         }
+    }
+
+    public init(animationType: SlideDrawerAnimationType = .push,
+                direction: SlideDrawerTransitionDirection = .left,
+                distance: CGFloat = SlideDrawerConst.screenwidth * 0.75,
+                apperarDuration: TimeInterval = 0.25,
+                disappearDuration: TimeInterval = 0.25,
+                finishPercent: CGFloat = 0.5,
+                backgroundImage: UIImage? = nil,
+                scaleY: CGFloat = 1,
+                maskAlpha: CGFloat = 0.4) {
+        self.animationType = animationType
+        self.direction = direction
+        self.backgroundImage = backgroundImage
+        self.distance = distance
+        self.finishPercent = finishPercent
+        self.apperarDuration = apperarDuration
+        self.disappearDuration = disappearDuration
+        self.scaleY = scaleY
+        self.maskAlpha = maskAlpha
     }
 
     public static var `default`: SlideDrawerConfiguration {

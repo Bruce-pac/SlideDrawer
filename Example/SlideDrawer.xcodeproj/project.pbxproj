@@ -12,6 +12,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		7D9B95D85F3C47843F76BF0A /* Pods_SlideDrawer_Example_SlideDrawer_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3068046B82685264C85B36C /* Pods_SlideDrawer_Example_SlideDrawer_ExampleUITests.framework */; };
 		813CA6E8537317919E02670D /* Pods_SlideDrawer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C744A74EFFB07146413321C4 /* Pods_SlideDrawer_Tests.framework */; };
 		81BFAE34D2F9FE736EE1E73B /* Pods_SlideDrawer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABA01B1797F6991309AA150 /* Pods_SlideDrawer_Example.framework */; };
 		84028A7B2182E494003A6D85 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84028A762182E493003A6D85 /* NextViewController.swift */; };
@@ -20,6 +21,8 @@
 		84028A7E2182E494003A6D85 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84028A792182E494003A6D85 /* RightViewController.swift */; };
 		84028A7F2182E494003A6D85 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84028A7A2182E494003A6D85 /* ScrollViewController.swift */; };
 		843F713B2182EC6E00A3E221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843F71392182EC6E00A3E221 /* LaunchScreen.storyboard */; };
+		84E705D4244E01AA00A0A9AF /* SlideDrawer_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E705D3244E01AA00A0A9AF /* SlideDrawer_ExampleUITests.swift */; };
+		84E705DC244EDFD300A0A9AF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E705DB244EDFD300A0A9AF /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = SlideDrawer;
+		};
+		84E705D6244E01AA00A0A9AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = SlideDrawer_Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -44,6 +54,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6FB960B6F1BD0CFF74BE96DD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		765B0A760BA3BE7CEC2B754F /* Pods-SlideDrawer_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_ExampleUITests/Pods-SlideDrawer_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EFD6BB867DF150544F8CF63 /* Pods-SlideDrawer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		84028A762182E493003A6D85 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		84028A772182E494003A6D85 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
@@ -51,11 +62,19 @@
 		84028A792182E494003A6D85 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 		84028A7A2182E494003A6D85 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		843F713A2182EC6E00A3E221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84E705D1244E01A900A0A9AF /* SlideDrawer_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideDrawer_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E705D3244E01AA00A0A9AF /* SlideDrawer_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideDrawer_ExampleUITests.swift; sourceTree = "<group>"; };
+		84E705D5244E01AA00A0A9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E705DB244EDFD300A0A9AF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		84F344D599602C000DF1C8D0 /* Pods-SlideDrawer_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_ExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_ExampleUITests/Pods-SlideDrawer_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AF24986C9F391D4209B2C1FF /* Pods-SlideDrawer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Tests/Pods-SlideDrawer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B42B7BFE135B4769C76AECC4 /* Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests/Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B759886872D98AC46BEC7A39 /* Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests/Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BCB80D5A2C4C0E83C0B25E40 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C07D8860A4A21554ED93EF37 /* Pods-SlideDrawer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideDrawer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlideDrawer_Example/Pods-SlideDrawer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C744A74EFFB07146413321C4 /* Pods_SlideDrawer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideDrawer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABA01B1797F6991309AA150 /* Pods_SlideDrawer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideDrawer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3068046B82685264C85B36C /* Pods_SlideDrawer_Example_SlideDrawer_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideDrawer_Example_SlideDrawer_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA4E2CA6AD159F476DE73D1 /* SlideDrawer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SlideDrawer.podspec; path = ../SlideDrawer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -76,6 +95,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E705CE244E01A900A0A9AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D9B95D85F3C47843F76BF0A /* Pods_SlideDrawer_Example_SlideDrawer_ExampleUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,6 +111,7 @@
 			children = (
 				CABA01B1797F6991309AA150 /* Pods_SlideDrawer_Example.framework */,
 				C744A74EFFB07146413321C4 /* Pods_SlideDrawer_Tests.framework */,
+				D3068046B82685264C85B36C /* Pods_SlideDrawer_Example_SlideDrawer_ExampleUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -94,6 +122,7 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for SlideDrawer */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				84E705D2244E01AA00A0A9AF /* SlideDrawer_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				6BEC0B2B0295A27B2FCE18EF /* Pods */,
 				20CDD2214C918DFE2C982483 /* Frameworks */,
@@ -105,6 +134,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* SlideDrawer_Example.app */,
 				607FACE51AFB9204008FA782 /* SlideDrawer_Tests.xctest */,
+				84E705D1244E01A900A0A9AF /* SlideDrawer_ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +149,7 @@
 				84028A782182E494003A6D85 /* UIImageExtension.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				84E705DB244EDFD300A0A9AF /* TabBarController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				843F71392182EC6E00A3E221 /* LaunchScreen.storyboard */,
@@ -170,8 +201,21 @@
 				C07D8860A4A21554ED93EF37 /* Pods-SlideDrawer_Example.release.xcconfig */,
 				AF24986C9F391D4209B2C1FF /* Pods-SlideDrawer_Tests.debug.xcconfig */,
 				4587170D2D2ADF6AB08DEA48 /* Pods-SlideDrawer_Tests.release.xcconfig */,
+				765B0A760BA3BE7CEC2B754F /* Pods-SlideDrawer_ExampleUITests.debug.xcconfig */,
+				84F344D599602C000DF1C8D0 /* Pods-SlideDrawer_ExampleUITests.release.xcconfig */,
+				B759886872D98AC46BEC7A39 /* Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests.debug.xcconfig */,
+				B42B7BFE135B4769C76AECC4 /* Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		84E705D2244E01AA00A0A9AF /* SlideDrawer_ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84E705D3244E01AA00A0A9AF /* SlideDrawer_ExampleUITests.swift */,
+				84E705D5244E01AA00A0A9AF /* Info.plist */,
+			);
+			path = SlideDrawer_ExampleUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,13 +259,33 @@
 			productReference = 607FACE51AFB9204008FA782 /* SlideDrawer_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		84E705D0244E01A900A0A9AF /* SlideDrawer_ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E705DA244E01AA00A0A9AF /* Build configuration list for PBXNativeTarget "SlideDrawer_ExampleUITests" */;
+			buildPhases = (
+				838849FBEF74305FA643B05E /* [CP] Check Pods Manifest.lock */,
+				84E705CD244E01A900A0A9AF /* Sources */,
+				84E705CE244E01A900A0A9AF /* Frameworks */,
+				84E705CF244E01A900A0A9AF /* Resources */,
+				20ADAD920FD2D0F3B3863E00 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E705D7244E01AA00A0A9AF /* PBXTargetDependency */,
+			);
+			name = SlideDrawer_ExampleUITests;
+			productName = SlideDrawer_ExampleUITests;
+			productReference = 84E705D1244E01A900A0A9AF /* SlideDrawer_ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -233,6 +297,12 @@
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					84E705D0244E01A900A0A9AF = {
+						CreatedOnToolsVersion = 11.4;
+						DevelopmentTeam = NS27ZB8WPD;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -253,6 +323,7 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* SlideDrawer_Example */,
 				607FACE41AFB9204008FA782 /* SlideDrawer_Tests */,
+				84E705D0244E01A900A0A9AF /* SlideDrawer_ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -275,9 +346,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E705CF244E01A900A0A9AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		20ADAD920FD2D0F3B3863E00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests/Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests-frameworks.sh",
+				"${PODS_ROOT}/LookinServer/LookinServer.framework",
+				"${BUILT_PRODUCTS_DIR}/SlideDrawer/SlideDrawer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LookinServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideDrawer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests/Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4E3800A6B0F89D84EA334403 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,6 +418,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		838849FBEF74305FA643B05E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D39A4504150AB7611BF4CF15 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				84E705DC244EDFD300A0A9AF /* TabBarController.swift in Sources */,
 				84028A7C2182E494003A6D85 /* LeftViewController.swift in Sources */,
 				84028A7B2182E494003A6D85 /* NextViewController.swift in Sources */,
 				84028A7F2182E494003A6D85 /* ScrollViewController.swift in Sources */,
@@ -367,6 +488,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E705CD244E01A900A0A9AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E705D4244E01AA00A0A9AF /* SlideDrawer_ExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -374,6 +503,11 @@
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* SlideDrawer_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+		84E705D7244E01AA00A0A9AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* SlideDrawer_Example */;
+			targetProxy = 84E705D6244E01AA00A0A9AF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -584,6 +718,59 @@
 			};
 			name = Release;
 		};
+		84E705D8244E01AA00A0A9AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B759886872D98AC46BEC7A39 /* Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = NS27ZB8WPD;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SlideDrawer_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bruce.SlideDrawer-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SlideDrawer_Example;
+			};
+			name = Debug;
+		};
+		84E705D9244E01AA00A0A9AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B42B7BFE135B4769C76AECC4 /* Pods-SlideDrawer_Example-SlideDrawer_ExampleUITests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NS27ZB8WPD;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SlideDrawer_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bruce.SlideDrawer-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SlideDrawer_Example;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -610,6 +797,15 @@
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
 				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E705DA244E01AA00A0A9AF /* Build configuration list for PBXNativeTarget "SlideDrawer_ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E705D8244E01AA00A0A9AF /* Debug */,
+				84E705D9244E01AA00A0A9AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

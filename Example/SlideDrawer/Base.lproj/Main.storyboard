@@ -58,12 +58,15 @@
         <!--Tab Bar Controller-->
         <scene sceneID="odH-jF-DAS">
             <objects>
-                <tabBarController id="f7U-pO-a2V" sceneMemberID="viewController">
+                <tabBarController id="f7U-pO-a2V" customClass="TabBarController" customModule="SlideDrawer_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="maa-gw-qfS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="TabBarController"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="q7b-Ya-khn" kind="relationship" relationship="viewControllers" id="3Jq-yY-YGT"/>
                         <segue destination="YSf-Ws-hhl" kind="relationship" relationship="viewControllers" id="CHV-LW-jgW"/>

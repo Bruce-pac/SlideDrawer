@@ -6,7 +6,10 @@ target 'SlideDrawer_Example' do
 
   target 'SlideDrawer_Tests' do
     inherit! :search_paths
-
-    
   end
+
+  target 'SlideDrawer_ExampleUITests' do
+    pod 'SlideDrawer', :path => '../'
+  end
+
 end
