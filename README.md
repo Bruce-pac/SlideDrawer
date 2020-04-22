@@ -73,7 +73,12 @@ self.sd.show(drawer: vc) { (letConfig) -> SlideDrawerConfiguration in
                 var config = letConfig
                 config.direction = .right
                 return config
-            }
+}
+
+// add interactive gesture to show the drawer
+self.sd.register(gesture: .edge) { (direction) in
+            self.zoom(from: direction)
+}
 ```
 
 See Examples for more usage
