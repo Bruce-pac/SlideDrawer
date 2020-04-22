@@ -16,6 +16,7 @@ public struct SlideDrawerConst {
     static let backgroundScale: CGFloat = 1.4
     static let edgeGestureLength: CGFloat = 50
     internal struct AssociatedKeys {
-        static var animatorKey = "animatorKey"
+        static var animatorKey = "com.sliderdrawer.animatorKey"
+        static var registerGesture = "com.sliderdrawer.registerGesture"
     }
 }

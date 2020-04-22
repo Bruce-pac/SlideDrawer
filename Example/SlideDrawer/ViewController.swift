@@ -20,9 +20,9 @@ class ViewController: UITableViewController {
         automaticallyAdjustsScrollViewInsets = false
         tableView.contentInset = UIEdgeInsets(top: 35, left: 0, bottom: 0, right: 0)
         self.sd.register(gesture: .edge) { (direction) in
-            self.push(from: direction)
+//            self.push(from: direction)
 //            self.mask(from: direction)
-//            self.zoom(from: direction)
+            self.zoom(from: direction)
         }
     }
 

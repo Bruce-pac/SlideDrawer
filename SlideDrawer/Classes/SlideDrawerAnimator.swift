@@ -11,50 +11,39 @@ import UIKit
 class SlideDrawerAnimator: NSObject {
     private var configuration: SlideDrawerConfiguration
 
-    internal var disappearInteractiveTransition: SlideDrawerInteractiveTransition? {
-        didSet {
-            self.disappearInteractiveTransition?.configuration = self.configuration
-        }
-    }
+    lazy var disappearInteractiveTransition: SlideDrawerInteractiveTransition = {
+        let disappear = SlideDrawerInteractiveTransition(transitionType: .disappear)
+        return disappear
+    }()
 
-    internal var appearInteractiveTransition: SlideDrawerInteractiveTransition? {
-        didSet {
-            self.appearInteractiveTransition?.configuration = self.configuration
-        }
-    }
+    lazy var appearInteractiveTransition: SlideDrawerInteractiveTransition = {
+        let appear = SlideDrawerInteractiveTransition(transitionType: .appear)
+        appear.transitionHandler = self.transitionHandler
+        return appear
+    }()
 
     var presentationController: SlideDrawerPresentationController!
 
-    init(configuration: SlideDrawerConfiguration) {
+    var transitionHandler: TransitionHandler?
+
+    init(configuration: SlideDrawerConfiguration,
+         transitionHandler: TransitionHandler? = nil) {
         self.configuration = configuration
+        self.transitionHandler = transitionHandler
     }
 
     deinit {
-        print(#function, self)
+        debugPrint(#function, self)
     }
 
     func update(configuration: SlideDrawerConfiguration) {
         self.configuration = configuration
-        self.disappearInteractiveTransition?.configuration = self.configuration
-        self.appearInteractiveTransition?.configuration = self.configuration
+        self.disappearInteractiveTransition.configuration = self.configuration
+        self.appearInteractiveTransition.configuration = self.configuration
     }
 
-    func addPanGesture(on viewController: UIViewController, for transition: SlideDrawerInteractiveTransition) {
-        switch transition.drawerAppearGesture {
-        case .edge:
-            let leftedge = UIScreenEdgePanGestureRecognizer(target: transition, action: #selector(transition.handle(gesture:)))
-            leftedge.edges = .left
-            leftedge.delegate = self
-            viewController.view.addGestureRecognizer(leftedge)
-            let rightedge = UIScreenEdgePanGestureRecognizer(target: transition, action: #selector(transition.handle(gesture:)))
-            rightedge.edges = .right
-            rightedge.delegate = self
-            viewController.view.addGestureRecognizer(rightedge)
-        case .fullScreen:
-            let pan = UIPanGestureRecognizer(target: transition, action: #selector(transition.handle(gesture:)))
-            pan.delegate = self
-            viewController.view.addGestureRecognizer(pan)
-        }
+    @objc func handle(gesture: UIPanGestureRecognizer) {
+        self.appearInteractiveTransition.handleAppear(gesture: gesture)
     }
 }
 
@@ -81,14 +70,12 @@ extension SlideDrawerAnimator: UIViewControllerTransitioningDelegate {
     }
 
     func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        guard let interacting = self.appearInteractiveTransition?.interacting else { return nil }
-
+        let interacting = self.appearInteractiveTransition.interacting
         return interacting ? self.appearInteractiveTransition : nil
     }
 
     func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        guard let interacting = self.disappearInteractiveTransition?.interacting else { return nil }
-
+        let interacting = self.disappearInteractiveTransition.interacting
         return interacting ? self.disappearInteractiveTransition : nil
     }
 
@@ -97,6 +84,9 @@ extension SlideDrawerAnimator: UIViewControllerTransitioningDelegate {
                                                                    presenting: presenting,
                                                                    source: source,
                                                                    configuration: self.configuration)
+        presentationController.dismissPanHandler = { [unowned self] (gesture) in
+            self.disappearInteractiveTransition.handleDisppear(gesture: gesture, presentingVC: presenting ?? source)
+        }
         return presentationController
     }
 }

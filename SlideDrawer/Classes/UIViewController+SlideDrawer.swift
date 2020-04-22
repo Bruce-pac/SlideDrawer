@@ -8,17 +8,6 @@
 
 import UIKit
 
-extension UIViewController {
-    internal var animator: SlideDrawerAnimator? {
-        get {
-            return objc_getAssociatedObject(self, &SlideDrawerConst.AssociatedKeys.animatorKey) as? SlideDrawerAnimator
-        }
-        set {
-            objc_setAssociatedObject(self, &SlideDrawerConst.AssociatedKeys.animatorKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-}
-
 public extension SlideDrawer where Base: UIViewController {
     /// 展示抽屉
     ///
@@ -34,10 +23,6 @@ public extension SlideDrawer where Base: UIViewController {
         }
         viewController.animator = animator
         animator?.update(configuration: configuration)
-        /// 创建消失的交互性转场，并赋值给animator
-        let disappearIntractiveTransion = SlideDrawerInteractiveTransition(transitionType: .disappear)
-        disappearIntractiveTransion.drawerVC = viewController
-        animator?.disappearInteractiveTransition = disappearIntractiveTransion
         viewController.transitioningDelegate = animator
         viewController.modalPresentationStyle = .custom
         self.base.present(viewController, animated: true, completion: nil)
@@ -56,17 +41,28 @@ public extension SlideDrawer where Base: UIViewController {
     ///   - gesture: 交互手势的类型，边缘和全屏
     ///   - transitionHandler: 触发手势后需要执行的具体转场
     func register(gesture: IntractiveGestureType, transitionHandler: @escaping (SlideDrawerTransitionDirection) -> Void) {
-        let animator = SlideDrawerAnimator(configuration: SlideDrawerConfiguration.default)
+        let animator = SlideDrawerAnimator(configuration: SlideDrawerConfiguration.default, transitionHandler: transitionHandler)
 
-        let appearIntractiveTransion = SlideDrawerInteractiveTransition(transitionType: .appear)
-        appearIntractiveTransion.drawerAppearGesture = gesture
-        appearIntractiveTransion.transitionHandler = transitionHandler
-
-        animator.appearInteractiveTransition = appearIntractiveTransion
-        animator.addPanGesture(on: self.base, for: appearIntractiveTransion)
-
+        self.base.sd_isRegisterGesture = true
         self.base.animator = animator
         self.base.transitioningDelegate = animator
+
+        let viewController = self.base
+        switch gesture {
+        case .edge:
+            let leftedge = UIScreenEdgePanGestureRecognizer(target: animator, action: #selector(animator.handle(gesture:)))
+            leftedge.edges = .left
+            leftedge.delegate = animator
+            viewController.view.addGestureRecognizer(leftedge)
+            let rightedge = UIScreenEdgePanGestureRecognizer(target: animator, action: #selector(animator.handle(gesture:)))
+            rightedge.edges = .right
+            rightedge.delegate = animator
+            viewController.view.addGestureRecognizer(rightedge)
+        case .fullScreen:
+            let pan = UIPanGestureRecognizer(target: animator, action: #selector(animator.handle(gesture:)))
+            pan.delegate = animator
+            viewController.view.addGestureRecognizer(pan)
+        }
     }
 
     /// 抽屉内push
@@ -88,7 +84,7 @@ public extension SlideDrawer where Base: UIViewController {
                 return
             }
         }
-        print("no navigationController")
+        debugPrint("no navigationController")
     }
 }
 
@@ -103,5 +99,26 @@ public extension SlideDrawer where Base: UIViewController, Base: SlideDrawerPres
         }
         viewControllerToPresent.modalPresentationStyle = .overFullScreen
         self.base.present(viewControllerToPresent, animated: flag, completion: completion)
+    }
+}
+
+extension UIViewController {
+    internal var animator: SlideDrawerAnimator? {
+        get {
+            return objc_getAssociatedObject(self, &SlideDrawerConst.AssociatedKeys.animatorKey) as? SlideDrawerAnimator
+        }
+        set {
+            objc_setAssociatedObject(self, &SlideDrawerConst.AssociatedKeys.animatorKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+
+    /// A value that indicates whether or not an interactive gesture is registered
+    var sd_isRegisterGesture: Bool {
+        get {
+            return objc_getAssociatedObject(self, &SlideDrawerConst.AssociatedKeys.registerGesture) as? Bool ?? false
+        }
+        set {
+            objc_setAssociatedObject(self, &SlideDrawerConst.AssociatedKeys.registerGesture, newValue, .OBJC_ASSOCIATION_ASSIGN)
+        }
     }
 }

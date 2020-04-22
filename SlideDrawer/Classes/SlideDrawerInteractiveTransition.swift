@@ -13,16 +13,12 @@ public enum IntractiveGestureType {
     case fullScreen
 }
 
+typealias TransitionHandler = (SlideDrawerTransitionDirection) -> Void
+
 class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
     SlideDrawerTransitionable {
     var transitionType: SlideDrawerTransitionType
     var configuration: SlideDrawerConfiguration
-
-    var drawerAppearGesture: IntractiveGestureType = .edge
-
-    weak var drawerVC: UIViewController?
-
-    typealias TransitionHandler = (SlideDrawerTransitionDirection) -> Void
 
     var transitionHandler: TransitionHandler?
 
@@ -43,60 +39,29 @@ class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
         self.transitionType = transitionType
         self.configuration = configuration
         super.init()
-
-        self.addNotificationCenterObserver()
     }
 
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.SlideDrawer.pan, object: nil)
+        debugPrint("SlideDrawerInteractiveTransition")
     }
 
-    // MARK: private
-
-    private func addNotificationCenterObserver() {
-        // 观察SlideDrawerPresentationController发出的通知
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleGesture(by:)), name: NSNotification.Name.SlideDrawer.pan, object: nil)
-    }
-
-    // 处理SlideDrawerPresentationController发出的通知
-    @objc private func handleGesture(by noti: NSNotification) {
-        let object = noti.object
-
-        switch object {
-        case is UIPanGestureRecognizer:
-            guard self.transitionType == .disappear else {
+    func handleAppear(gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            gesture.setTranslation(.zero, in: gesture.view)
+        case .changed:
+            let x = gesture.translation(in: gesture.view).x
+            if x == 0 {
                 return
             }
-            let gesture = object as! UIPanGestureRecognizer
-            self.handle(gesture: gesture)
-        default:
-            break
-        }
-    }
-
-    var contextData: UIViewControllerContextTransitioning?
-
-    override func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-        super.startInteractiveTransition(transitionContext)
-        contextData = transitionContext
-    }
-
-    override var debugDescription: String{
-        return "percent:\(self.percent)"
-    }
-
-    @objc internal func handle(gesture: UIPanGestureRecognizer) {
-        // 拿到手势移动的距离，计算百分比
-        let x = gesture.translation(in: gesture.view).x
-        self.percent = abs(x / SlideDrawerConst.screenwidth)
-
-        switch gesture.state {
-        case .changed:
             if self.interacting {
+                self.percent = abs(x / configuration.distance)
                 self.percent = min(max(self.percent, 0.001), 1.0)
-                self.update(self.percent)
-            } else {
-                self.willInteracting(beginTranslationX: x, by: gesture)
+                update(self.percent)
+            }else{
+                self.interacting = true
+                self.configuration.direction = x > 0 ? .left : .right
+                self.transitionHandler?(self.configuration.direction)
             }
         case .cancelled, .ended:
             self.interacting = false
@@ -106,34 +71,30 @@ class SlideDrawerInteractiveTransition: UIPercentDrivenInteractiveTransition,
         }
     }
 
-    private func willInteracting(beginTranslationX x: CGFloat, by gesture: UIPanGestureRecognizer) {
-        switch self.transitionType {
-        case .appear:
+    func handleDisppear(gesture: UIPanGestureRecognizer, presentingVC: UIViewController) {
+        switch gesture.state {
+        case .began:
+            gesture.setTranslation(.zero, in: gesture.view)
+        case .changed:
+            let x = gesture.translation(in: gesture.view).x
             if x == 0 {
                 return
             }
-            self.appear(beginTranslationX: x, by: gesture)
-        case .disappear:
-            self.disappear(beginTranslationX: x, by: gesture)
-        }
-    }
-
-    private func appear(beginTranslationX x: CGFloat, by gesture: UIPanGestureRecognizer) {
-        self.configuration.direction = x > 0 ? .left : .right
-        self.interacting = true
-        self.transitionHandler?(self.configuration.direction)
-    }
-
-    func disappear(beginTranslationX x: CGFloat, by gesture: UIPanGestureRecognizer) {
-        let condition = (x > 0, self.configuration.direction)
-        switch condition {
-        case (true, .left), (false, .right):
-            return
+            if self.interacting {
+                self.percent = abs(x / configuration.distance)
+                self.percent = min(max(self.percent, 0.001), 1.0)
+                update(self.percent)
+            }else{
+                self.interacting = true
+                presentingVC.dismiss(animated: true, completion: nil)
+            }
+        case .cancelled, .ended:
+            self.interacting = false
+            self.startDisplayLink(from: self.percent)
         default:
             break
         }
-        self.interacting = true
-        self.drawerVC?.dismiss(animated: true, completion: nil)
+
     }
 
     // 手势结束后接下来的事情

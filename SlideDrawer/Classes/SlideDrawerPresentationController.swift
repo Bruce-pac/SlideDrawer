@@ -140,7 +140,7 @@ class SlideDrawerPresentationController: UIPresentationController {
         return result
     }
 
-    var transitioning: Bool = false
+    private(set) var transitioning: Bool = false
 
     override func presentationTransitionWillBegin() {
         transitioning = true
@@ -208,11 +208,12 @@ class SlideDrawerPresentationController: UIPresentationController {
         self.dimmingView.addGestureRecognizer(pan)
     }
 
+    var dismissPanHandler: ((UIPanGestureRecognizer) -> Void)?
+
     @objc func handleGesture(recognizer: UIGestureRecognizer) {
         switch recognizer {
         case is UIPanGestureRecognizer:
-            // 处理遮罩层上的手势，通过发送通知到SlideDrawerInteractiveTransition具体处理
-            NotificationCenter.default.post(name: NSNotification.Name.SlideDrawer.pan, object: recognizer)
+            self.dismissPanHandler?(recognizer as! UIPanGestureRecognizer)
         case is UITapGestureRecognizer:
             presentedViewController.dismiss(animated: true, completion: nil)
         default:

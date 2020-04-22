@@ -229,9 +229,16 @@ extension SlideDrawerTransition: UIViewControllerAnimatedTransitioning {
     }
 
     fileprivate func cleanup() {
-        presentationController.presentingViewController.animator = nil
-        presentationController.presentedViewController.animator = nil
-        presentationController.sourceViewController.animator = nil
+        let vcs = [presentationController.presentingViewController,
+                   presentationController.presentedViewController,
+                   presentationController.sourceViewController]
+
+        vcs.forEach { (vc) in
+            vc.animator?.presentationController = nil
+            if !vc.sd_isRegisterGesture {
+                vc.animator = nil
+            }
+        }
     }
 
     func animationEnded(_ transitionCompleted: Bool) {

@@ -39,8 +39,6 @@ extension UIViewController: SlideDrawerCompatible {}
 
 extension NSNotification.Name {
     public struct SlideDrawer {
-        internal static let tap = Notification.Name("tap")
-        internal static let pan = Notification.Name("pan")
         // see demo
         @available(*, deprecated, message: "No longer need")
         public static let insideDismissCompleted = Notification.Name("insideDismissCompleted")
@@ -50,7 +48,7 @@ extension NSNotification.Name {
 extension UIView: SlideDrawerCompatible {}
 
 extension SlideDrawer where Base: UIView {
-    var viewController: UIViewController? {
+    public var viewController: UIViewController? {
         var responder = self.base.next
 
         while responder != nil && !(responder?.isKind(of: UIViewController.self))! {
