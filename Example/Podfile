@@ -1,5 +1,7 @@
 use_frameworks!
 
+platform :ios, '10.0'
+
 target 'SlideDrawer_Example' do
   pod 'SlideDrawer', :path => '../'
   pod 'LookinServer', :configurations => ['Debug']

@@ -1,62 +1,73 @@
-![Preview](https://cdn.lookin.work/public/style/images/independent/homepage/preview_en_2x.jpg "Preview")
+![Preview](https://cdn.lookin.work/public/style/images/independent/homepage/preview_en_1x.jpg "Preview")
 
-## 中文说明请滑到底部
+# Introduction
+You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.
 
-## Lookin
-You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal. 
+Official Website：https://lookin.work/
 
-And you can do more with features like Console or Method Trace. 
+# Integration Guide
+To use Lookin macOS app, you need to integrate LookinServer (iOS Framework of Lookin) into your iOS project.
 
-Moreover, Lookin can run on your iPhone or iPad without connecting to a Mac.  
+> **Warning**
+> 1. Never integrate LookinServer in Release building configuration.
+> 2. Do not use versions earlier than 1.0.6, as it contains a critical bug that could lead to online incidents in your project: https://qxh1ndiez2w.feishu.cn/wiki/Z9SpwT7zWiqvYvkBe7Lc6Disnab
 
-And one more thing, Lookin is free.
+## via CocoaPods:
+### Swift Project
+`pod 'LookinServer', :subspecs => ['Swift'], :configurations => ['Debug']`
+### Objective-C Project
+`pod 'LookinServer', :configurations => ['Debug']`
+## via Swift Package Manager:
+`https://github.com/QMUI/LookinServer/`
 
-Download: https://lookin.work/get/
+# Repository
+LookinServer: https://github.com/QMUI/LookinServer
 
-## Use Lookin on Your iPhone
-Tutorial: https://lookin.work/faq/lookin-ios/
-![Lookin iOS](https://cdn.lookin.work/public/style/images/independent/sec6_2x.png "Lookin iOS")
+macOS app: https://github.com/hughkli/Lookin/
 
-## LookinServer
-You must embed LookinServer.framework into your iOS App before using Lookin.
-- Embed by CocoaPods: https://lookin.work/faq/integration-cocoapods/
-- Embed Manually：https://lookin.work/faq/integration-manual/
+# Tips
+- How to display custom information in Lookin: https://bytedance.larkoffice.com/docx/TRridRXeUoErMTxs94bcnGchnlb
+- How to display more member variables in Lookin: https://bytedance.larkoffice.com/docx/CKRndHqdeoub11xSqUZcMlFhnWe
+- How to turn on Swift optimization for Lookin: https://bytedance.larkoffice.com/docx/GFRLdzpeKoakeyxvwgCcZ5XdnTb
+- Documentation Collection: https://bytedance.larkoffice.com/docx/Yvv1d57XQoe5l0xZ0ZRc0ILfnWb
 
-## Source Code
-The source code of Lookin in iOS is open-sourced: https://github.com/QMUI/LookinServer/tree/master/SourceCode
+# Acknowledgements
+https://qxh1ndiez2w.feishu.cn/docx/YIFjdE4gIolp3hxn1tGckiBxnWf
 
-Download and open "Lookin.xcodeproj", you will see two targets named "LookinServer" and "LookinServer-Universal". After compiling and running "LookinServer-Universal", a file named "LookinServer.framework" will be displayed in a Finder window.
+---
+# 简介
+Lookin 可以查看与修改 iOS App 里的 UI 对象，类似于 Xcode 自带的 UI Inspector 工具，或另一款叫做 Reveal 的软件。
 
-## Push Request
-Feel free to push requests. For example, there're some issues that we don't know how to deal with. 
-- Some users got issues below while archiving:
-> error: exportArchive: Failed to verify bitcode in LookinServer.framework/LookinServer:
-error: Linker option verification failed for bundle /var/folders/d6/bjdx752s38n57nz1s0lz31yh0000gq/T/LookinServerar_KLA/LookinServer.armv7.xar (unrecognized arguments: -platform_version iOS 8.0.0 13.0.0)
+官网：https://lookin.work/
 
-- Because we're not good at Swift, unexpected problems may happen when using Lookin in Swift project. For example, a Swift prefix may be displayed unexpectedly before class name.
+# 安装 LookinServer Framework
+如果这是你的 iOS 项目第一次使用 Lookin，则需要先把 LookinServer 这款 iOS Framework 集成到你的 iOS 项目中。
 
-## Lookin
-Lookin 是一款 macOS 软件，它可以查看与修改 iOS App 里的 UI 对象，类似于 Xcode 自带的 UI Inspector 工具，或另一款叫做 Reveal 的软件。 
+> **Warning**
+> 
+> 1. 不要在 AppStore 模式下集成 LookinServer。
+> 2. 不要使用早于 1.0.6 的版本，因为它包含一个严重 Bug，可能导致线上事故: https://qxh1ndiez2w.feishu.cn/wiki/Z9SpwT7zWiqvYvkBe7Lc6Disnab
+## 通过 CocoaPods：
 
-但借助于“控制台”和“方法监听”功能，Lookin 还可以进行 UI 之外的调试。 
+### Swift 项目
+`pod 'LookinServer', :subspecs => ['Swift'], :configurations => ['Debug']`
+### Objective-C 项目
+`pod 'LookinServer', :configurations => ['Debug']`
 
-此外，它还可以嵌入你的 iOS App 而单独运行在 iPhone 或 iPad 上。 
+## 通过 Swift Package Manager:
+`https://github.com/QMUI/LookinServer/`
 
-最后，Lookin 完全免费。
+# 源代码仓库
 
-下载：https://lookin.work/get/
+iOS 端 LookinServer：https://github.com/QMUI/LookinServer
 
-## 在手机上使用 Lookin
-相关教程：https://lookin.work/faq/lookin-ios/
-![Lookin iOS](https://cdn.lookin.work/public/style/images/independent/sec6_2x.png "Lookin iOS")
+macOS 端软件：https://github.com/hughkli/Lookin/
 
+# 技巧
+- 如何在 Lookin 中展示自定义信息: https://bytedance.larkoffice.com/docx/TRridRXeUoErMTxs94bcnGchnlb
+- 如何在 Lookin 中展示更多成员变量: https://bytedance.larkoffice.com/docx/CKRndHqdeoub11xSqUZcMlFhnWe
+- 如何为 Lookin 开启 Swift 优化: https://bytedance.larkoffice.com/docx/GFRLdzpeKoakeyxvwgCcZ5XdnTb
+- 文档汇总：https://bytedance.larkoffice.com/docx/Yvv1d57XQoe5l0xZ0ZRc0ILfnWb
 
-## LookinServer
-在使用 Lookin 前，必须先把 LookinServer.framework 嵌入到你的 iOS App 里，下面是相关教程。
-- 通过 CocoaPods 嵌入：https://lookin.work/faq/integration-cocoapods/
-- 手动嵌入：https://lookin.work/faq/integration-manual/
-
-## 源代码
-Lookin 在 macOS 端的代码未开源，但在 iOS 端的代码已经全部开源，它包含了数据拉取、通讯、图像渲染等完整的相关代码：https://github.com/QMUI/LookinServer/tree/master/SourceCode
-
-下载并打开 “Lookin.xcodeproj” 后，你会看到 “LookinServer” 和 “LookinServer-Universal” 两个 target，选择 “LookinServer-Universal” 并编译，编译完成后项目文件夹会被自动打开，然后你就会看到新生成的 “LookinServer.framework” 文件。
+# 鸣谢
+https://qxh1ndiez2w.feishu.cn/docx/YIFjdE4gIolp3hxn1tGckiBxnWf

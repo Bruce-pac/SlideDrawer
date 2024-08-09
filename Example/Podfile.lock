@@ -1,5 +1,7 @@
 PODS:
-  - LookinServer (1.0.0)
+  - LookinServer (1.2.8):
+    - LookinServer/Core (= 1.2.8)
+  - LookinServer/Core (1.2.8)
   - SlideDrawer (2.0.0)
 
 DEPENDENCIES:
@@ -7,7 +9,7 @@ DEPENDENCIES:
   - SlideDrawer (from `../`)
 
 SPEC REPOS:
-  https://cdn.cocoapods.org/:
+  trunk:
     - LookinServer
 
 EXTERNAL SOURCES:
@@ -15,9 +17,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
-  SlideDrawer: 08b4edeb73ed049f0a2ef784f3c2fe4c27d88a6a
+  LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
+  SlideDrawer: 5ba22a9c9b3f6333448d2db925fdf0b2cd720973
 
-PODFILE CHECKSUM: f1cc34a36ed580203c26db86de02d678144246fd
+PODFILE CHECKSUM: 919f17b35e1e523c964eeef3c5fdeb0e76cf11c3
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.12.1
