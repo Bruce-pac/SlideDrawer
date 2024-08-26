@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "SlideDrawer",
-    platforms: [.iOS(.v9)],
+    platforms: [.iOS(.v10)],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
@@ -23,5 +23,5 @@ let package = Package(
             dependencies: ["SlideDrawer"],
             path: "Example/Tests"),
     ],
-    swiftLanguageVersions: [.v4_2, .v5]
+    swiftLanguageVersions: [.v5]
 )
